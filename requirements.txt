@@ -1,0 +1,9 @@
+streamlit>=1.43,<2
+pyspark==4.0.5
+numpy>=1.26,<3
+pandas>=2.2,<3
+torch>=2.3,<3
+transformers>=4.46,<5
+pillow>=10,<13
+pyarrow>=18,<25
+safetensors>=0.4,<1

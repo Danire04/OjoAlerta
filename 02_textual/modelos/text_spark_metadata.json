@@ -1,0 +1,32 @@
+{
+  "framework": "Spark ML",
+  "model_version": "text_spark_ml_v2",
+  "legal_labels": [
+    "Homicidio",
+    "Hurto",
+    "Lesiones",
+    "Robo",
+    "Robo agravado",
+    "Tenencia ilegal de armas"
+  ],
+  "taxonomy_order": [
+    "T01",
+    "T02",
+    "T03",
+    "T06"
+  ],
+  "mapping": {
+    "Homicidio": "T01",
+    "Lesiones": "T01",
+    "Robo": "T02",
+    "Robo agravado": "T02",
+    "Hurto": "T03",
+    "Tenencia ilegal de armas": "T06"
+  },
+  "regParam": 0.01,
+  "n_trainval": 5758,
+  "n_test": 1440,
+  "sample_size": 7198,
+  "source": "synthetic",
+  "mapping_warning": "T01 y T06 son proxies semánticos, no equivalencias verificadas"
+}

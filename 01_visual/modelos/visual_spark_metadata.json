@@ -1,0 +1,14 @@
+{
+  "framework": "Spark ML",
+  "class_order": [
+    "T01",
+    "T02",
+    "T03",
+    "T06"
+  ],
+  "CLIP": "openai/clip-vit-base-patch32",
+  "training_filter": "manual_decision = relevant",
+  "regParam": 1.0,
+  "split_hash": "beee93f489215bd68234",
+  "model_version": "visual_spark_ml_v2"
+}
