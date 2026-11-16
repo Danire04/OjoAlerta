@@ -154,9 +154,7 @@ with st.expander("Estado de archivos de los modelos"):
         st.write(("✅ " if disponible else "❌ ") + carpeta)
     st.caption("Se usan modelos entrenados previamente; este sitio no los reentrena.")
 st.warning(
-    "El resultado es exploratorio: el peso 50/50 no ha sido calibrado ni "
-    "la combinación evaluada con un conjunto de casos emparejados. "
-    "Además, tenencia ilegal de armas no equivale a disparos."
+    "--"
 )
 
 with st.form("analisis"):
