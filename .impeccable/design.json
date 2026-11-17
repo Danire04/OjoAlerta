@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-17T03:57:00Z",
+  "title": "Design System: OjoAlerta",
+  "extensions": {
+    "colorMeta": {
+      "accent": { "role": "primary", "displayName": "Coral de acción" },
+      "accent-hover": { "role": "primary", "displayName": "Coral profundo" },
+      "accent-soft": { "role": "primary", "displayName": "Coral velado" },
+      "accent-strong": { "role": "primary", "displayName": "Coral de lectura" },
+      "ink": { "role": "neutral", "displayName": "Tinta de análisis" },
+      "muted": { "role": "neutral", "displayName": "Pizarra suave" },
+      "canvas": { "role": "neutral", "displayName": "Papel frío" },
+      "surface": { "role": "neutral", "displayName": "Blanco de trabajo" },
+      "line": { "role": "neutral", "displayName": "Línea fría" },
+      "soft-surface": { "role": "neutral", "displayName": "Niebla de apoyo" },
+      "neutral-tint": { "role": "neutral", "displayName": "Gris de etiqueta" },
+      "neutral-label": { "role": "neutral", "displayName": "Pizarra de etiqueta" },
+      "input-surface": { "role": "neutral", "displayName": "Blanco de escritura" },
+      "success": { "displayName": "Verde de preparación" },
+      "chart-text": { "displayName": "Azul de señal textual" },
+      "chart-alternative": { "displayName": "Azul de alternativa" },
+      "chart-grid": { "displayName": "Cuadrícula fría" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Título de página", "purpose": "Título principal de escritorio." },
+      "display-mobile": { "displayName": "Título móvil", "purpose": "Título principal hasta 700px." },
+      "headline": { "displayName": "Sección", "purpose": "Encabezados de señales y secciones." },
+      "title": { "displayName": "Título de guía", "purpose": "Encabezados de los pasos explicativos." },
+      "body": { "displayName": "Lectura", "purpose": "Párrafos y listas; tamaño general heredado de Streamlit." },
+      "label": { "displayName": "Etiqueta lateral", "purpose": "Encabezado de taxonomía en mayúsculas." },
+      "chart": { "displayName": "Datos", "purpose": "Lectura de ejes y leyendas de probabilidades." }
+    },
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "Curva compartida por páginas, resultados y controles." },
+      { "name": "navigation-duration", "value": "240ms", "purpose": "Entrada de página con desplazamiento inicial de 5px." },
+      { "name": "result-duration", "value": "440ms", "purpose": "Entrada del resultado con desplazamiento inicial de 9px y recorte redondeado." },
+      { "name": "control-duration", "value": "180ms", "purpose": "Respuesta de botones, navegación y carga de imagen." },
+      { "name": "chart-duration", "value": "0ms", "purpose": "Plotly no anima las transiciones." },
+      { "name": "reduced-motion", "value": "animation: none !important; transition: none !important; scroll-behavior: auto !important;", "purpose": "Se aplica a todos los elementos y pseudoelementos con prefers-reduced-motion: reduce." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "1100px" },
+      { "name": "mobile", "value": "700px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Acción primaria",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Asignaciones explícitas del botón Analizar incidente; el relleno nativo pertenece a Streamlit.",
+      "html": "<button type=\"button\" class=\"ds-primary\">Analizar incidente</button>",
+      "css": ".ds-primary{font-family:Manrope,sans-serif;font-weight:700;background:var(--accent,#BC4535);color:#fff;border-color:var(--accent,#BC4535);border-radius:8px;min-height:42px;transition:background-color 180ms cubic-bezier(.16,1,.3,1),border-color 180ms cubic-bezier(.16,1,.3,1),transform 180ms cubic-bezier(.16,1,.3,1)}.ds-primary:not(:disabled):hover{background:#A73729;border-color:#A73729}.ds-primary:focus-visible{outline:3px solid #bc453580;outline-offset:3px}.ds-primary:not(:disabled):active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none!important}}"
+    },
+    {
+      "name": "Descripción",
+      "kind": "input",
+      "refersTo": "textarea",
+      "description": "Campo de descripción con tipografía, altura y foco explícitos; conserva los bordes nativos del entorno.",
+      "html": "<textarea class=\"ds-description\" aria-label=\"Descripción del mismo incidente\" placeholder=\"Describe las acciones que se observan, los objetos y el contexto de la escena…\"></textarea>",
+      "css": ".ds-description{font-family:Manrope,sans-serif;font-size:.91rem;line-height:1.65;height:235px;background:#FBFCFD;color:var(--ink,#172B38);caret-color:var(--accent,#BC4535)}.ds-description:focus-visible{outline:3px solid #bc453580;outline-offset:3px}"
+    },
+    {
+      "name": "Navegación lateral",
+      "kind": "nav",
+      "refersTo": "navigation-item",
+      "description": "Tres destinos con selección coral, respuesta al puntero y foco de teclado.",
+      "html": "<nav aria-label=\"Navegación\" class=\"ds-navigation\"><a class=\"ds-navigation-item\" href=\"#analizar\" aria-current=\"page\">Analizar incidente</a><a class=\"ds-navigation-item\" href=\"#historial\">Historial</a><a class=\"ds-navigation-item\" href=\"#guia\">Cómo funciona</a></nav>",
+      "css": ".ds-navigation{display:flex;flex-direction:column;gap:6px;font-family:Manrope,sans-serif}.ds-navigation-item{display:block;padding:12px 14px;border-radius:8px;margin:0;color:var(--ink,#172B38);text-decoration:none;transition:background 180ms cubic-bezier(.16,1,.3,1),color 180ms cubic-bezier(.16,1,.3,1)}.ds-navigation-item[aria-current=page]{background:#F9EAE6;color:#9C392D}.ds-navigation-item:hover{background:#F3F5F7}.ds-navigation-item:focus-visible{outline:3px solid #bc453580;outline-offset:2px}@media(prefers-reduced-motion:reduce){.ds-navigation-item{transition:none!important}}"
+    },
+    {
+      "name": "Distintivo académico",
+      "kind": "chip",
+      "refersTo": "pill",
+      "description": "Etiqueta informativa; no tiene una interacción de filtro.",
+      "html": "<span class=\"ds-pill\"><i aria-hidden=\"true\"></i>Prototipo académico</span>",
+      "css": ".ds-pill{display:inline-flex;align-items:center;gap:7px;padding:5px 10px;border-radius:30px;background:#EDF1F4;color:#405461;font-family:Manrope,sans-serif;font-size:.7rem;font-weight:650}.ds-pill i{width:6px;height:6px;background:#6C7E8A;border-radius:50%}"
+    },
+    {
+      "name": "Tarjeta de señal",
+      "kind": "card",
+      "refersTo": "signal-card",
+      "description": "Superficie de trabajo para imagen o descripción; borde fino y relleno adaptable.",
+      "html": "<section class=\"ds-signal\"><h2>La imagen</h2><p>Un fotograma que muestre el incidente.</p></section>",
+      "css": ".ds-signal{background:#fff;border:1px solid var(--line,#DCE3E8);border-radius:var(--radius,14px);padding:24px;font-family:Manrope,sans-serif;color:var(--ink,#172B38)}.ds-signal h2{font-size:1.35rem;font-weight:750;letter-spacing:-.025em;margin:0;padding:0}.ds-signal p{font-size:.78rem;line-height:1.65;color:var(--muted,#526370);margin:4px 0 20px}@media(max-width:1100px){.ds-signal{padding:19px}}"
+    },
+    {
+      "name": "Resultado destacado",
+      "kind": "custom",
+      "refersTo": "result-banner",
+      "description": "Contenedor de lectura conjunta. Los campos entre corchetes son marcadores, no una predicción ni una métrica de ejemplo.",
+      "html": "<section class=\"ds-result\"><div class=\"ds-result-title\"><div><span class=\"ds-result-code\">[Código] · Categoría estimada</span><h2>[Categoría]</h2></div><div class=\"ds-result-value\">[Porcentaje]<small>probabilidad combinada</small></div></div><p>Imagen y texto, con el mismo peso. Revisa también las categorías alternativas.</p></section>",
+      "css": ".ds-result{padding:26px 28px;border-radius:var(--radius,14px);background:var(--ink,#172B38);color:white;margin:8px 0 18px;font-family:Manrope,sans-serif;animation:ds-result-arrival 440ms cubic-bezier(.16,1,.3,1)}.ds-result-title{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.ds-result h2{color:white;font-size:1.7rem;font-weight:750;letter-spacing:-.025em;padding:0;margin:4px 0}.ds-result p{color:#C6D4DD;font-size:.8rem;line-height:1.65;margin:9px 0 0}.ds-result-code{color:#F5B0A2;font-weight:700;font-size:.85rem}.ds-result-value{font-size:1.8rem;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.03em}.ds-result-value small{display:block;font-size:.69rem;color:#C6D4DD;font-weight:500;letter-spacing:0;margin-top:2px}@keyframes ds-result-arrival{from{transform:translateY(9px);clip-path:inset(0 0 7% 0 round 14px)}to{transform:translateY(0);clip-path:inset(0 0 0 0 round 14px)}}@media(max-width:700px){.ds-result{padding:21px}.ds-result h2{font-size:1.45rem}}@media(prefers-reduced-motion:reduce){.ds-result{animation:none!important}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La mesa de análisis clara",
+    "overview": "OjoAlerta presenta una mesa de trabajo serena y legible. La tinta organiza la lectura; el coral guía la acción; el fondo frío separa las superficies blancas sin añadir peso. La densidad es moderada: títulos compactos, instrucciones breves y espacio suficiente para comparar dos señales del mismo incidente.\n\nLa identidad reúne el ojo geométrico existente, el nombre OjoAlerta y la frase «Cada señal cuenta.». Manrope local mantiene una voz continua en navegación, entradas y resultados. El idioma de la interfaz es español. El movimiento acompaña cambios de contexto y aparición de resultados; la preferencia de movimiento reducido elimina las animaciones y transiciones personalizadas.",
+    "keyCharacteristics": [
+      "Tinta para jerarquía y lectura; coral para acción y selección.",
+      "Superficies planas, bordes discretos y esquinas suaves.",
+      "Imagen y descripción visibles como una pareja de señales.",
+      "Tipografía local, cifras tabulares y etiquetas explícitas.",
+      "Transiciones breves con respeto al movimiento reducido."
+    ],
+    "rules": [
+      { "name": "The Señal con contexto Rule", "body": "Mantener etiquetas de texto junto al color de estados y series; un color aislado no expresa preparación ni identifica un modelo.", "section": "colors" },
+      { "name": "The Una voz Rule", "body": "Mantener Manrope local en títulos, controles y lectura de datos; no introducir otra familia de exhibición en las pantallas existentes.", "section": "typography" },
+      { "name": "The Superficie clara Rule", "body": "Conservar la separación por tono y borde en los contenedores documentados; no sustituirla por una sombra añadida.", "section": "elevation" },
+      { "name": "The Movimiento opcional Rule", "body": "Con `prefers-reduced-motion: reduce`, eliminar animaciones y transiciones personalizadas y mantener desplazamiento automático. Ninguna información debe depender de la animación.", "section": "components" }
+    ],
+    "dos": [
+      "Do usar tinta, coral y superficies frías con las funciones del frontmatter.",
+      "Do conservar Manrope local, el ojo geométrico y la interfaz en español.",
+      "Do mostrar etiquetas junto al color de estados y series.",
+      "Do conservar el foco visible y respetar el movimiento reducido.",
+      "Do mantener imagen y descripción como una pareja visible y apilable.",
+      "Do mantener porcentajes y contadores alineables con cifras tabulares."
+    ],
+    "donts": [
+      "Don't añadir sombras a las superficies documentadas.",
+      "Don't convertir el color de una probabilidad en una medida visual de gravedad.",
+      "Don't ocultar el foco ni usar movimiento como único medio de comunicar un cambio.",
+      "Don't presentar como vigente un resultado que corresponde a entradas anteriores.",
+      "Don't convertir valores nativos no fijados de Streamlit en tokens supuestamente extraídos."
+    ]
+  }
+}
