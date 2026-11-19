@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.SQLTransformer","timestamp":1795049329948,"sparkVersion":"3.5.6","uid":"SQLTransformer_542f72d736e6","paramMap":{"statement":"SELECT *, translate(trim(regexp_replace(regexp_replace(translate(lower(norm), 'áéíóúü', 'aeiouu'), '[^a-zñ ]', ' '), ' +', ' ')), 'ñ', 'n') AS texto_norm FROM __THIS__"},"defaultParamMap":{}}
