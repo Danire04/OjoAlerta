@@ -1,6 +1,6 @@
 {
   "framework": "Spark ML",
-  "model_version": "text_spark_ml_v2",
+  "model_version": "textual_v6_tfidf_lr",
   "legal_labels": [
     "Homicidio",
     "Hurto",
@@ -23,10 +23,19 @@
     "Hurto": "T03",
     "Tenencia ilegal de armas": "T06"
   },
-  "regParam": 0.01,
-  "n_trainval": 5758,
-  "n_test": 1440,
-  "sample_size": 7198,
+  "regParam": 0.001,
+  "n_trainval": 160012,
+  "n_test": 39988,
+  "sample_size": 200000,
   "source": "synthetic",
-  "mapping_warning": "T01 y T06 son proxies semánticos, no equivalencias verificadas"
+  "mapping_warning": "T01 y T06 son proxies semánticos, no equivalencias verificadas",
+  "modelo_ganador": "tfidf_lr",
+  "hiperparametros": {
+    "min_df": 2,
+    "regParam": 0.001
+  },
+  "criterio": "mayor F1 macro en validación",
+  "ajustado_con": "entrenamiento (validación solo para elegir hiperparámetros y modelo)",
+  "columna_entrada": "norm",
+  "notebook": "Flujo_Textual_BDA_clasificacion_delito_v6_Colab"
 }
